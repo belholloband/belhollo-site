@@ -98,17 +98,24 @@
 
         @media(max-width: 768px) {
             header {
-                padding: 30px 24px;
-                justify-content: center;
+                padding: 24px 24px;
                 flex-direction: column;
+                gap: 16px;
             }
 
             header.scrolled {
-                padding: 20px 24px;
+                padding: 16px 24px;
             }
 
             nav {
-                display: none;
+                display: flex;
+                width: 100%;
+                justify-content: center;
+                flex-wrap: wrap;
+                gap: 16px;
+            }
+            nav a {
+                margin-left: 0;
             }
         }
 
@@ -175,7 +182,52 @@
                 padding: 160px 8%;
             }
         }
+    
+        .sub-header {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 20px 60px;
+            display: flex;
+            justify-content: flex-end;
+            gap: 40px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateY(-10px);
+            border-top: 1px solid rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+            z-index: 99;
+        }
+        .sub-header.visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+        .sub-header a {
+            color: #444;
+            text-decoration: none;
+            font-size: 11px;
+            letter-spacing: 4px;
+            transition: color 0.3s ease;
+            margin-left: 0;
+        }
+        .sub-header a:hover {
+            color: #111;
+        }
+        @media(max-width: 768px) {
+            .sub-header {
+                flex-wrap: wrap;
+                gap: 16px;
+                padding: 16px;
+            }
+        }
     </style>
+    <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
 <body>
@@ -187,10 +239,19 @@
             <a href="news.html">NEWS</a>
             <a href="live.html">LIVE</a>
             <a href="lyrics.html">LYRICS</a>
-            <a href="https://belhollo.official.ec/" target="_blank">SHOP</a>
+            <a href="#" id="link-trigger">LINK</a>
             <a href="contact.html">CONTACT</a>
         </nav>
+            <div class="sub-header" id="sub-header">
+            <a href="https://www.youtube.com/channel/UCNzpGNaa54wM73LgcOftM4g" target="_blank">YOUTUBE</a>
+            <a href="https://open.spotify.com/intl-ja/artist/3JfZV3QtSw7UWv53DjKct8?si=pdNgzVqmQPSKuQPaclTzDg&nd=1&dlsi=7c19099b719c47ef" target="_blank">SPOTIFY</a>
+            <a href="https://music.apple.com/jp/artist/%E3%83%99%E3%83%AB%E3%83%9B%E3%83%BC%E3%83%AD/1459336240" target="_blank">APPLE MUSIC</a>
+            <a href="https://x.com/belhollo?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor" target="_blank">X (TWITTER)</a>
+            <a href="https://www.instagram.com/belhollo/?hl=ja" target="_blank">INSTAGRAM</a>
+            <a href="https://belhollo.official.ec/" target="_blank">SHOP</a>
+        </div>
     </header>
+
 
     <section class="news-detail">
         <div class="date">2026.05.20</div>
@@ -213,7 +274,7 @@
     </section>
 
     <footer>
-        © 2026 Belhollo
+        &copy; 2026 Belhollo
     </footer>
 
     <script>
@@ -227,6 +288,49 @@
         });
     </script>
 
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const linkTrigger = document.getElementById("link-trigger");
+            const subHeader = document.getElementById("sub-header");
+            let hideTimeout;
+
+            if (linkTrigger && subHeader) {
+                linkTrigger.addEventListener("mouseenter", function(e) {
+                    if(window.innerWidth > 768) {
+                        clearTimeout(hideTimeout);
+                        subHeader.classList.add("visible");
+                    }
+                });
+                
+                subHeader.addEventListener("mouseenter", function(e) {
+                    if(window.innerWidth > 768) {
+                        clearTimeout(hideTimeout);
+                    }
+                });
+
+                linkTrigger.addEventListener("mouseleave", function(e) {
+                    if(window.innerWidth > 768) {
+                        hideTimeout = setTimeout(() => { subHeader.classList.remove("visible"); }, 200);
+                    }
+                });
+                
+                subHeader.addEventListener("mouseleave", function(e) {
+                    if(window.innerWidth > 768) {
+                        hideTimeout = setTimeout(() => { subHeader.classList.remove("visible"); }, 200);
+                    }
+                });
+
+                linkTrigger.addEventListener("click", function(e) {
+                    e.preventDefault();
+                    if(window.innerWidth <= 768) {
+                        subHeader.classList.toggle("visible");
+                    }
+                });
+            }
+        });
+    </script>
 </body>
+
 
 </html>
