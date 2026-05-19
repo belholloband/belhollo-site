@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LIVE | ベルホーロ</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #b4c9ce;
+            color: #333;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            overflow-x: hidden;
+            line-height: 2.4;
+            font-weight: 400;
+        }
+
+        ::selection {
+            background: rgba(0, 0, 0, 0.1);
+            color: #111;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 24px 60px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        header div {
+            font-weight: 300;
+            letter-spacing: 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #111;
+            opacity: 0.9;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            margin-left: 60px;
+            font-size: 11px;
+            letter-spacing: 5px;
+            position: relative;
+            transition: color 0.5s ease;
+        }
+
+        nav a:hover {
+            color: #111;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.4);
+            left: 50%;
+            bottom: -10px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        footer {
+            padding: 180px 0 100px;
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 8px;
+            color: #111;
+            text-transform: uppercase;
+            padding-left: 8px;
+        }
+
+        @media(max-width: 768px) {
+            header {
+                padding: 30px 24px;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            header.scrolled {
+                padding: 20px 24px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        /* --- Live Layout --- */
+        .live-container {
+            padding: 220px 12%;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .live-section {
+            margin-bottom: 160px;
+        }
+
+        .live-section h2 {
+            font-size: 12px;
+            letter-spacing: 6px;
+            margin-bottom: 80px;
+            color: #555;
+        }
+
+        .live-item {
+            margin-bottom: 80px;
+            padding-bottom: 40px;
+            border-bottom: 1px solid #222;
+        }
+
+        .live-date {
+            font-size: 12px;
+            letter-spacing: 3px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .live-title {
+            font-size: 18px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+            color: #333;
+        }
+
+        .live-venue {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .live-detail {
+            font-size: 13px;
+            color: #444;
+            line-height: 1.8;
+        }
+
+        .year {
+            font-size: 12px;
+            letter-spacing: 5px;
+            color: #444;
+            margin: 60px 0 40px;
+        }
+
+        .coming-soon {
+            font-size: 12px;
+            letter-spacing: 6px;
+            color: #444;
+            text-align: center;
+            margin: 40px 0;
+            padding: 40px;
+            border: 1px solid #111;
+        }
+
+        @media(max-width:768px) {
+            .live-container {
+                padding: 160px 8%;
+            }
+
+            .live-section {
+                margin-bottom: 100px;
+            }
+
+            .live-item {
+                margin-bottom: 60px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div><a href="index.html" style="display: flex; align-items: center; text-decoration: none;"><img src="logo.png" alt="Belhollo" style="height: 28px; width: auto;"></a></div>
+        <nav>
+            <a href="profile.html">PROFILE</a>
+            <a href="news.html">NEWS</a>
+            <a href="live.html">LIVE</a>
+            <a href="lyrics.html">LYRICS</a>
+            <a href="https://belhollo.official.ec/" target="_blank">SHOP</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <section class="live-container">
+
+        <div class="live-section">
+            <h2>UPCOMING</h2>
+
+            <div class="live-item" style="border-bottom: none;">
+                <img src="live-flyer.jpg" alt="進捗" style="width: 100%; max-width: 600px; margin-bottom: 40px; display: block;">
+                <div class="live-date">
+                    2026.06.20 SAT
+                </div>
+                <div class="live-title">
+                    「進捗」
+                </div>
+                <div class="live-venue">
+                    八丁堀 七針
+                </div>
+                <div class="live-detail">
+                    OPEN 19:30 / START 20:00<br>
+                    TICKET ¥2,000<br><br>
+                    <a href="https://forms.gle/hqWpbevkoZYjTSp69" target="_blank" style="color: #333; text-decoration: underline; transition: opacity 0.3s;" onmouseover="this.style.opacity=0.6" onmouseout="this.style.opacity=1">ご予約はこちら</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="live-section archive">
+            <h2>ARCHIVE</h2>
+
+            <div class="coming-soon">
+                COMING SOON
+            </div>
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Belhollo
+    </footer>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            const header = document.getElementById("header");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+</body>
+
+</html>

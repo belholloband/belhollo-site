@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>藍色ドライブ | ベルホーロ</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #b4c9ce;
+            color: #333;
+            font-family: "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", sans-serif;
+            overflow-x: hidden;
+            line-height: 2.4;
+            font-weight: 400;
+        }
+
+        ::selection {
+            background: rgba(0, 0, 0, 0.1);
+            color: #111;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 100;
+            transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        header.scrolled {
+            background: rgba(255, 255, 255, 0.4);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            padding: 24px 60px;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        header div {
+            font-weight: 300;
+            letter-spacing: 8px;
+            font-size: 13px;
+            text-transform: uppercase;
+            color: #111;
+            opacity: 0.9;
+        }
+
+        nav a {
+            color: #666;
+            text-decoration: none;
+            margin-left: 60px;
+            font-size: 11px;
+            letter-spacing: 5px;
+            position: relative;
+            transition: color 0.5s ease;
+        }
+
+        nav a:hover {
+            color: #111;
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            background: rgba(0, 0, 0, 0.4);
+            left: 50%;
+            bottom: -10px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+            transform: translateX(-50%);
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        footer {
+            padding: 180px 0 100px;
+            text-align: center;
+            font-size: 10px;
+            letter-spacing: 8px;
+            color: #111;
+            text-transform: uppercase;
+            padding-left: 8px;
+        }
+
+        @media(max-width: 768px) {
+            header {
+                padding: 30px 24px;
+                justify-content: center;
+                flex-direction: column;
+            }
+
+            header.scrolled {
+                padding: 20px 24px;
+            }
+
+            nav {
+                display: none;
+            }
+        }
+
+        /* --- Album Page Layout --- */
+        .album-page {
+            display: flex;
+            gap: 120px;
+            padding: 220px 12%;
+            max-width: 1200px;
+            margin: auto;
+        }
+
+        .album-left {
+            width: 40%;
+        }
+
+        .album-left h1 {
+            font-size: 28px;
+            letter-spacing: 4px;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .album-cover {
+            width: 100%;
+            max-width: 420px;
+            display: block;
+        }
+
+        .album-right {
+            width: 60%;
+        }
+
+        .album-info {
+            margin-bottom: 60px;
+            color: #555;
+        }
+
+        .track-section {
+            margin-bottom: 60px;
+        }
+
+        .track-section h2 {
+            font-size: 14px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #aaa;
+            padding-bottom: 10px;
+            color: #333;
+        }
+
+        .tracklist {
+            list-style: none;
+            padding: 0;
+        }
+
+        .tracklist li {
+            margin-bottom: 12px;
+            font-size: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #333;
+        }
+
+        .mv-icon {
+            font-size: 12px;
+            text-decoration: none;
+            color: #555;
+            transition: 0.3s;
+        }
+
+        .mv-icon:hover {
+            color: #111;
+        }
+
+        .album-link h2 {
+            font-size: 14px;
+            letter-spacing: 4px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #aaa;
+            padding-bottom: 10px;
+            color: #333;
+        }
+
+        .album-link a {
+            color: #555;
+            text-decoration: none;
+        }
+
+        .album-link a:hover {
+            color: #111;
+        }
+
+        /* --- モーダル --- */
+        .lyrics-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: 0.4s ease;
+            z-index: 1000;
+        }
+
+        .lyrics-modal.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .lyrics-content {
+            background: #f0f4f8;
+            padding: 60px;
+            max-width: 600px;
+            width: 80%;
+            color: #333;
+            line-height: 2;
+            border-radius: 8px;
+            max-height: 70vh;
+            overflow-y: auto;
+            transform: translateY(20px);
+            transition: 0.4s;
+        }
+
+        .lyrics-modal.active .lyrics-content {
+            transform: translateY(0);
+        }
+
+        .lyrics-content h3 {
+            margin-bottom: 30px;
+            letter-spacing: 4px;
+        }
+
+        .lyrics-content p {
+            white-space: pre-line;
+            color: #555;
+        }
+
+        .tracklist li {
+            cursor: pointer;
+            transition: 0.3s;
+        }
+
+        .tracklist li:hover {
+            color: #111;
+        }
+
+        @media(max-width: 768px) {
+            .album-page {
+                flex-direction: column;
+                gap: 60px;
+                padding: 160px 10%;
+            }
+
+            .album-left,
+            .album-right {
+                width: 100%;
+            }
+
+            .album-cover {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div><a href="index.html" style="display: flex; align-items: center; text-decoration: none;"><img src="logo.png" alt="Belhollo" style="height: 28px; width: auto;"></a></div>
+        <nav>
+            <a href="profile.html">PROFILE</a>
+            <a href="news.html">NEWS</a>
+            <a href="live.html">LIVE</a>
+            <a href="lyrics.html">LYRICS</a>
+            <a href="https://belhollo.official.ec/" target="_blank">SHOP</a>
+            <a href="contact.html">CONTACT</a>
+        </nav>
+    </header>
+
+    <section class="album-page">
+
+        <div class="album-left">
+            <h1>藍色ドライブ</h1>
+            <img src="jacket/aiirodrive.jpg" class="album-cover" alt="藍色ドライブ Cover">
+        </div>
+
+        <div class="album-right">
+
+            <div class="album-info">
+                <p>2023.9.20 Release</p>
+                <p>1st EP</p>
+            </div>
+
+            <div class="track-section">
+                <h2>Track</h2>
+                <ul class="tracklist">
+                    <li onclick="openLyrics('オブスキュア')">
+                        オブスキュア
+                        <a href="https://youtu.be/sL3yQ-8oudk?si=xyzflYqCoeqPRlI3" class="mv-icon" target="_blank" onclick="event.stopPropagation()">▶</a>
+                    </li>
+                    <li onclick="openLyrics('藍色ドライブ')">
+                        藍色ドライブ
+                        <a href="https://youtu.be/AyOCltVIvzw?si=PkPWcVLpaFN08IFn" class="mv-icon" target="_blank" onclick="event.stopPropagation()">▶</a>
+                    </li>
+                    <li onclick="openLyrics('ソワレ')">
+                        ソワレ
+                    </li>
+                    <li onclick="openLyrics('サーフ')">
+                        サーフ
+                    </li>
+                </ul>
+            </div>
+
+            <div class="album-link">
+                <h2>Link</h2>
+                <a href="https://linkcloud.mu/8bd3a57e" target="_blank">
+                    https://linkcloud.mu/8bd3a57e
+                </a>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        © 2026 Belhollo
+    </footer>
+
+    <script>
+        window.addEventListener("scroll", function () {
+            const header = document.getElementById("header");
+            if (window.scrollY > 50) {
+                header.classList.add("scrolled");
+            } else {
+                header.classList.remove("scrolled");
+            }
+        });
+    </script>
+
+    <!-- モーダル本体 -->
+    <div id="lyrics-modal" class="lyrics-modal">
+        <div class="lyrics-content">
+            <h3 id="lyrics-title"></h3>
+            <p id="lyrics-text"></p>
+        </div>
+    </div>
+
+    <script>
+        const lyricsData = {
+            "オブスキュア": `待ちわびた昼の続きを
+軽やかにいなす君はスパイダー
+しなやかな身のこなしで
+騒がしいこの胸をたしなめるから
+
+いずれは橋の下で吹き飛ぶようなスマイルを
+香車よりも前のめりなステップで
+煩わしい乗り換えをくぐり抜けるのさ
+
+待ちわびた昼の続きを
+軽やかにいなす君はスパイダー
+艶やかにしなる手招きで
+斜に構えた表情が崩れちゃうのさ
+
+すべてを見透かすような圧倒的なスマイルが
+こびりつけどそんなに嫌じゃないな
+いつでもシュールな素振りでクールに見せかけるよ
+言葉よりもわかりやすいムーブで
+バレてしまうけど君を見てしまうから
+わざとらしいけど腕を差し伸べちゃうのさ`,
+            "藍色ドライブ": `なだらかな海岸線抜けた先には
+鮮やかな群青で輝く海だ
+
+あの頃は百万点だけ求めてた
+健やかな傲慢さ　消えないままさ
+
+ただの通り雨が夏を連れてきた
+暇つぶしの準備でもしようかな
+
+このまま時が止まるなら
+少ししてすぐ飽きそうだな
+
+午後の渚では人は上の空
+忙しないのはむしろ雲の方だな
+
+変われないことを諦めたら
+波の模様が気になった
+
+いつか消えるという揺るぎない事実が
+どこへでもいける気にさせてくれる
+
+なだらかな海岸線抜けた先には
+鮮やかな群青で輝く海だ
+
+ただの通り雨が夏を連れてきた
+暇つぶしの準備でもしようかな`,
+            "ソワレ": `疲れ果てたあとで
+水を流しこむ
+
+君は退屈そう
+タバコを吸っている
+
+乱れ髪が滲みゆくのを
+まぶたの奥に焼きつけたら
+
+人の波を避ける
+うしろめたい朝
+
+ぬるい缶コーヒーが
+体を黒く塗る
+
+いつか記憶の中に埋もれ
+思い出に成り下がっても
+ずっと
+
+君のこと決して忘れない
+通り過ぎる季節のように
+何も言わずこの胸をすり抜けても
+指先に残る露の味
+夏の雨にうたれていた
+なめらかな残り香が流れ落ちていく`,
+            "サーフ": `飾らぬ予感が胸を締めつける
+境目も前触れもなくその時は来る
+
+溢れる想いにむりやり蓋をする
+干からびたサナギのようにじっとしている
+
+ぬるい風がすり抜けてく夏の海
+波を刻む姿がまばらに映る夕暮れ
+
+優しい時間はやがて消えていく
+それがわかるから美しく見えるね
+
+飾らぬ予感が胸を締めつける
+境目も前触れもなくその時は来る
+
+心の岸辺に少し手を伸ばす
+分かりやすい未来なんていらないかな
+
+濡れた髪がしおらしく見せる季節
+やがて過ぎる夏の中に僕らはいる
+波を刻む姿がまばらに映る夕暮れ
+波を刻む姿がまぶしく映る夕暮れ`
+        };
+
+        function openLyrics(title) {
+            document.getElementById("lyrics-title").innerText = title;
+            document.getElementById("lyrics-text").innerText = lyricsData[title];
+            document.getElementById("lyrics-modal").classList.add("active");
+        }
+
+        document.getElementById("lyrics-modal").addEventListener("click", function () {
+            this.classList.remove("active");
+        });
+    </script>
+
+</body>
+
+</html>
