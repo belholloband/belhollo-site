@@ -499,6 +499,9 @@
                 hamburger.addEventListener("click", function() {
                     hamburger.classList.toggle("active");
                     navMenu.classList.toggle("open");
+                    if (!hamburger.classList.contains("active") && subHeader) {
+                        subHeader.classList.remove("visible");
+                    }
                 });
             }
 
