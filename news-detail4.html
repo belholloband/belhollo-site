@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEWS | ベルホーロ</title>
+    <title>3rd Album「オブスキュア」発売決定のお知らせ | ベルホーロ</title>
 
     <style>
         * {
@@ -133,57 +133,67 @@
             }
         }
 
-        /* --- News Layout --- */
-        .news-list {
+        /* --- News Detail Layout --- */
+        .news-detail {
             padding: 220px 12%;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .news-item {
-            margin-bottom: 120px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 60px;
+        .news-detail h1 {
+            font-size: 22px;
+            letter-spacing: 6px;
+            margin-bottom: 40px;
         }
 
-        .news-date {
+        .news-detail .date {
             font-size: 11px;
-            letter-spacing: 4px;
             color: #222;
             margin-bottom: 8px;
+            letter-spacing: 4px;
+            /* Added letter spacing to match the overall design */
         }
 
-        .news-title {
-            font-size: 18px;
-            letter-spacing: 4px;
+        .news-detail p {
+            line-height: 2.2;
             margin-bottom: 30px;
             color: #333;
-            transition: 0.4s ease;
         }
 
-        .news-excerpt {
-            font-size: 14px;
-            line-height: 2;
-            color: #555;
-        }
-
-        .news-item a {
+        .back-link {
+            display: inline-block;
+            margin-top: 100px;
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #444;
             text-decoration: none;
-            color: inherit;
-            display: block;
+            transition: color 0.4s ease;
+            position: relative;
+            padding-bottom: 5px;
         }
 
-        .news-item:hover .news-title {
+        .back-link:hover {
             color: #111;
         }
 
-        @media(max-width:768px) {
-            .news-list {
-                padding: 160px 8%;
-            }
+        .back-link::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.4);
+            left: 0;
+            bottom: 0px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-            .news-item {
-                margin-bottom: 80px;
+        .back-link:hover::after {
+            width: 100%;
+        }
+
+        @media(max-width:768px) {
+            .news-detail {
+                padding: 160px 8%;
             }
         }
     
@@ -258,7 +268,8 @@
         .hamburger.active span:nth-child(3) {
             transform: translateY(-8.5px) rotate(-45deg);
         }
-    </style>
+        </style>
+
     <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
@@ -288,48 +299,24 @@
     </header>
 
 
-    <section class="news-list">
-        <article class="news-item">
-            <a href="news-detail4.html">
-                <div class="news-date">2026.06.20</div>
-                <h2 class="news-title">新作発売単独公演「ゴーストノート」を開催決定</h2>
-                <div class="news-excerpt">
-                    アルバム『ゴーストノート』の発売記念公演を柴崎modで開催することが決定いたしました。
-                </div>
-            </a>
-        </article>
+    <section class="news-detail">
+        <div class="date">2026.06.20</div>
+        <h1>新作発売単独公演<br>「ゴーストノート」を開催決定</h1>
 
+        <img src="live-ghostnote.png" alt="ゴーストノート 単独公演" style="width: 100%; max-width: 600px; margin-bottom: 40px; display: block;">
 
-        <article class="news-item">
-            <a href="news-detail3.html">
-                <div class="news-date">2026.05.27</div>
-                <h2 class="news-title">ニューシングル「柘榴」リリース</h2>
-                <div class="news-excerpt">
-                    3rdアルバム『ゴーストノート』から、先行シングル「柘榴」がリリースされました。
-                </div>
-            </a>
-        </article>
+        <p>
+            3rdアルバム『ゴーストノート』のリリースを記念した単独公演「ゴーストノート」を、9月27日に柴崎modにて開催いたします。<br><br>
 
+            本公演では、アルバム『ゴーストノート』収録楽曲を中心に演奏予定です。<br>
+            作品の世界観をライブならではの形で体験できる特別な一夜となります。<br><br>
 
-        <article class="news-item">
-            <a href="news-detail.html">
-                <div class="news-date">2026.05.20</div>
-                <h2 class="news-title">3rdアルバム『ゴーストノート』リリース決定</h2>
-                <div class="news-excerpt">
-                    前作『Shallows』から約2年ぶりとなるフルアルバム『ゴーストノート』が8月21日にリリースされることが決定いたしました。
-                </div>
-            </a>
-        </article>
+            ご予約は<a href="https://forms.gle/bygYtGi4dN1oNXEK8" target="_blank" style="color: #555; text-decoration: underline;">こちら</a>
+        </p>
 
-        <article class="news-item">
-            <a href="news-detail2.html">
-                <div class="news-date">2026.05.20</div>
-                <h2 class="news-title">単独公演「進捗」を開催決定</h2>
-                <div class="news-excerpt">
-                    約1年ぶりとなる企画ライブを八丁堀七針にて開催することが決定いたしました。
-                </div>
-            </a>
-        </article>
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="news.html" style="color: #555; text-decoration: none; letter-spacing: 4px; font-size: 11px;">BACK TO NEWS</a>
+        </div>
     </section>
 
     <footer>

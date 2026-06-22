@@ -285,7 +285,28 @@
         .hamburger.active span:nth-child(3) {
             transform: translateY(-8.5px) rotate(-45deg);
         }
+            .archive-link {
+            text-align: center;
+            margin-top: 100px;
+            margin-bottom: 60px;
+        }
+        .archive-button {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 40px;
+            border: 1px solid #111;
+            color: #111;
+            text-decoration: none;
+            letter-spacing: 2px;
+            font-size: 14px;
+            transition: 0.3s;
+        }
+        .archive-button:hover {
+            background: #111;
+            color: #fff;
+        }
     </style>
+
     <link rel="icon" href="favicon.png" type="image/png">
 </head>
 
@@ -321,30 +342,35 @@
             <h2>UPCOMING</h2>
 
             <div class="live-item" style="border-bottom: none;">
-                <img src="live-flyer.jpg" alt="進捗" style="width: 100%; max-width: 600px; margin-bottom: 40px; display: block;">
+                <img src="live-ghostnote.png" alt="ゴーストノート" style="width: 100%; max-width: 600px; margin-bottom: 40px; display: block;">
                 <div class="live-date">
-                    2026.06.20 SAT
+                    2026.09.27(Sun)
                 </div>
                 <div class="live-title">
-                    「進捗」
+                    新作発売単独公演<br>「ゴーストノート」
                 </div>
                 <div class="live-venue">
-                    八丁堀 七針
+                    @柴崎mod
                 </div>
                 <div class="live-detail">
-                    OPEN 19:30 / START 20:00<br>
-                    TICKET ¥2,000<br><br>
-                    <a href="https://forms.gle/hqWpbevkoZYjTSp69" target="_blank" style="color: #333; text-decoration: underline; transition: opacity 0.3s;" onmouseover="this.style.opacity=0.6" onmouseout="this.style.opacity=1">ご予約はこちら</a>
+                    開場 18:30 / 開演 19:30<br>
+                    予約 ¥2,500（+1 Drink）<br>
+                    当日 ¥3,000（+1 Drink）<br>
+                    学割 -¥500<br><br>
+                    <a href="https://forms.gle/vHsWMCa8n54jokpB7" target="_blank" style="color: #333; text-decoration: underline; transition: opacity 0.3s;" onmouseover="this.style.opacity=0.6" onmouseout="this.style.opacity=1">ご予約はこちら</a>
                 </div>
             </div>
+
+
+            
         </div>
 
-        <div class="live-section archive">
+        <section class="archive-link">
             <h2>ARCHIVE</h2>
-
-            <div class="coming-soon">
-                COMING SOON
-            </div>
+            <a href="archive.html" class="archive-button">
+                VIEW ARCHIVE →
+            </a>
+        </section>
         </div>
 
     </section>
