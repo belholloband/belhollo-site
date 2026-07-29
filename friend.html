@@ -418,8 +418,9 @@
             <div class="track-section">
                 <h2>Track</h2>
                 <ul class="tracklist">
-                    <li>
+                    <li style="cursor: pointer;" onclick="openLyrics('フレンド')">
                         フレンド
+                        <a href="https://youtu.be/25C1TXzcPsA?si=vt84bx-h4wTxx6v2" class="mv-icon" target="_blank" onclick="event.stopPropagation()">▶</a>
                     </li>
                 </ul>
             </div>
@@ -434,6 +435,16 @@
     <!-- 戻るボタン -->
     <div style="text-align: center; margin-top: 60px; margin-bottom: 60px;">
         <a href="lyrics.html" style="color: #555; text-decoration: none; letter-spacing: 4px; font-size: 11px;">BACK TO LYRICS</a>
+    </div>
+
+    
+    <!-- モーダル -->
+    <div class="lyrics-modal" id="lyrics-modal" onclick="closeLyrics()">
+        <div class="lyrics-content" onclick="event.stopPropagation()">
+            
+            <h3 id="modal-title"></h3>
+            <p id="modal-text"></p>
+        </div>
     </div>
 
     <footer>
@@ -461,6 +472,41 @@
                 });
             }
         });
-    </script>
+    
+        const lyricsData = {
+            "フレンド": `笑い転げたり　泣きじゃくったり
+思い起こすたび　にやけてしまう
+つまらないことがおもしろくなる
+魔法みたいだね　無敵のままいられるね
+
+歩道橋の上　坂道の先
+高いとこが好き　俺たちは馬鹿
+悪ふざけして日が暮れてゆく
+時間が止まった　明日も今日だ
+
+みぞれ混じりの日に
+君は少し俯いていた
+今も分からぬまま
+あの時なんて言えば良かったのか
+
+不思議　どうでもいい
+ことばかりをよく覚えてる
+少しだけ寂しい
+巻き戻せない　時は流れていた
+
+笑い転げたり　泣きじゃくったり
+思い起こすたび　にやけてしまうのにね`
+        };
+
+        function openLyrics(title) {
+            document.getElementById("modal-title").innerText = title;
+            document.getElementById("modal-text").innerText = lyricsData[title];
+            document.getElementById("lyrics-modal").classList.add("active");
+        }
+
+        function closeLyrics() {
+            document.getElementById("lyrics-modal").classList.remove("active");
+        }
+</script>
 </body>
 </html>
