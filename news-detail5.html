@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NEWS | ベルホーロ</title>
+    <title>3rd Album「オブスキュア」発売決定のお知らせ | ベルホーロ</title>
 
     <style>
         * {
@@ -133,57 +133,67 @@
             }
         }
 
-        /* --- News Layout --- */
-        .news-list {
+        /* --- News Detail Layout --- */
+        .news-detail {
             padding: 220px 12%;
-            max-width: 900px;
+            max-width: 800px;
             margin: 0 auto;
         }
 
-        .news-item {
-            margin-bottom: 120px;
-            border-bottom: 1px solid #222;
-            padding-bottom: 60px;
+        .news-detail h1 {
+            font-size: 22px;
+            letter-spacing: 6px;
+            margin-bottom: 40px;
         }
 
-        .news-date {
+        .news-detail .date {
             font-size: 11px;
-            letter-spacing: 4px;
             color: #222;
             margin-bottom: 8px;
+            letter-spacing: 4px;
+            /* Added letter spacing to match the overall design */
         }
 
-        .news-title {
-            font-size: 18px;
-            letter-spacing: 4px;
+        .news-detail p {
+            line-height: 2.2;
             margin-bottom: 30px;
             color: #333;
-            transition: 0.4s ease;
         }
 
-        .news-excerpt {
-            font-size: 14px;
-            line-height: 2;
-            color: #555;
-        }
-
-        .news-item a {
+        .back-link {
+            display: inline-block;
+            margin-top: 100px;
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #444;
             text-decoration: none;
-            color: inherit;
-            display: block;
+            transition: color 0.4s ease;
+            position: relative;
+            padding-bottom: 5px;
         }
 
-        .news-item:hover .news-title {
+        .back-link:hover {
             color: #111;
         }
 
-        @media(max-width:768px) {
-            .news-list {
-                padding: 160px 8%;
-            }
+        .back-link::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.4);
+            left: 0;
+            bottom: 0px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
 
-            .news-item {
-                margin-bottom: 80px;
+        .back-link:hover::after {
+            width: 100%;
+        }
+
+        @media(max-width:768px) {
+            .news-detail {
+                padding: 160px 8%;
             }
         }
     
@@ -288,59 +298,31 @@
     </header>
 
 
-    <section class="news-list">
-        <article class="news-item">
-            <a href="news-detail5.html">
-                <div class="news-date">2026.07.29</div>
-                <h2 class="news-title">ニューシングル「フレンド」リリース</h2>
-                <div class="news-excerpt">
-                    3rdアルバム『ゴーストノート』から、先行シングル第2弾「フレンド」がリリースされました。
-                </div>
-            </a>
-        </article>
+        <section class="news-detail">
+        <div class="date">2026.07.29</div>
+        <h1>ニューシングル「フレンド」リリース</h1>
 
+        <img src="friend.jpg" alt="フレンド" style="width: 100%; max-width: 600px; margin-bottom: 40px; display: block;">
 
-        <article class="news-item">
-            <a href="news-detail4.html">
-                <div class="news-date">2026.06.20</div>
-                <h2 class="news-title">新作発売単独公演「ゴーストノート」を開催決定</h2>
-                <div class="news-excerpt">
-                    アルバム『ゴーストノート』の発売記念公演を柴崎modで開催することが決定いたしました。
-                </div>
-            </a>
-        </article>
+        <p>
+            ベルホーロの3rdアルバム『ゴーストノート』より、先行シングル第2弾「フレンド」を7月29日に配信リリースいたしました。<br><br>
 
+            「フレンド」は、シンプルなビートの上を深いエコーをまとったギターが漂う、どこか不穏な空気感を持つ楽曲です。時間の流れとともに少しずつ変化していく人との距離や、過去を振り返ることで生まれる感情を静かに描いています。<br><br>
 
-        <article class="news-item">
-            <a href="news-detail3.html">
-                <div class="news-date">2026.05.27</div>
-                <h2 class="news-title">ニューシングル「柘榴」リリース</h2>
-                <div class="news-excerpt">
-                    3rdアルバム『ゴーストノート』から、先行シングル「柘榴」がリリースされました。
-                </div>
-            </a>
-        </article>
+            あわせて公開されたミュージックビデオは、時代遅れのカメラで撮影した映像素材を大きく歪ませた作品です。鮮明には思い出せない懐かしい記憶や、時間の経過とともに少しずつ輪郭を失っていく過去の情景を表現しています。<br><br>
 
+            「フレンド」は、8月21日発売の3rdアルバム『ゴーストノート』に収録予定です。ぜひ配信とミュージックビデオをあわせてお楽しみください。<br><br>
 
-        <article class="news-item">
-            <a href="news-detail.html">
-                <div class="news-date">2026.05.20</div>
-                <h2 class="news-title">3rdアルバム『ゴーストノート』リリース決定</h2>
-                <div class="news-excerpt">
-                    前作『Shallows』から約2年ぶりとなるフルアルバム『ゴーストノート』が8月21日にリリースされることが決定いたしました。
-                </div>
-            </a>
-        </article>
+            配信リンク<br>
+            <iframe src="https://linkco.re/embed/q6X5sMRp" width="300" height="600" frameborder="0"></iframe><br><br>
 
-        <article class="news-item">
-            <a href="news-detail2.html">
-                <div class="news-date">2026.05.20</div>
-                <h2 class="news-title">単独公演「進捗」を開催決定</h2>
-                <div class="news-excerpt">
-                    約1年ぶりとなる企画ライブを八丁堀七針にて開催することが決定いたしました。
-                </div>
-            </a>
-        </article>
+            Music Video<br>
+            近日公開
+        </p>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="news.html" style="color: #555; text-decoration: none; letter-spacing: 4px; font-size: 11px;">BACK TO NEWS</a>
+        </div>
     </section>
 
     <footer>
@@ -356,10 +338,7 @@
                 header.classList.remove("scrolled");
             }
         });
-    </script>
 
-
-    <script>
         document.addEventListener("DOMContentLoaded", function() {
             const hamburger = document.getElementById("hamburger");
             const navMenu = document.getElementById("nav-menu");
@@ -368,52 +347,9 @@
                 hamburger.addEventListener("click", function() {
                     hamburger.classList.toggle("active");
                     navMenu.classList.toggle("open");
-                    if (!hamburger.classList.contains("active") && subHeader) {
-                        subHeader.classList.remove("visible");
-                    }
-                });
-            }
-
-            const linkTrigger = document.getElementById("link-trigger");
-            const subHeader = document.getElementById("sub-header");
-            let hideTimeout;
-
-            if (linkTrigger && subHeader) {
-                linkTrigger.addEventListener("mouseenter", function(e) {
-                    if(window.innerWidth > 768) {
-                        clearTimeout(hideTimeout);
-                        subHeader.classList.add("visible");
-                    }
-                });
-                
-                subHeader.addEventListener("mouseenter", function(e) {
-                    if(window.innerWidth > 768) {
-                        clearTimeout(hideTimeout);
-                    }
-                });
-
-                linkTrigger.addEventListener("mouseleave", function(e) {
-                    if(window.innerWidth > 768) {
-                        hideTimeout = setTimeout(() => { subHeader.classList.remove("visible"); }, 200);
-                    }
-                });
-                
-                subHeader.addEventListener("mouseleave", function(e) {
-                    if(window.innerWidth > 768) {
-                        hideTimeout = setTimeout(() => { subHeader.classList.remove("visible"); }, 200);
-                    }
-                });
-
-                linkTrigger.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    if(window.innerWidth <= 768) {
-                        subHeader.classList.toggle("visible");
-                    }
                 });
             }
         });
     </script>
 </body>
-
-
 </html>
