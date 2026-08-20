@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lyrics | ベルホーロ</title>
+    <title>ニューアルバム『ゴーストノート』リリース</title>
 
     <style>
         * {
@@ -133,55 +133,67 @@
             }
         }
 
-        /* --- Lyrics Layout --- */
-        .lyrics-grid {
-            padding: 200px 10%;
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 80px 60px;
+        /* --- News Detail Layout --- */
+        .news-detail {
+            padding: 220px 12%;
+            max-width: 800px;
+            margin: 0 auto;
         }
 
-        .lyrics-item {
-            text-align: center;
-            cursor: pointer;
-            transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-        }
-
-        .lyrics-item img {
-            width: 100%;
-            aspect-ratio: 1 / 1;
-            object-fit: cover;
-            filter: brightness(0.9);
-            transition: all 0.6s ease;
-            background: #111;
-            /* fallback for missing images */
-        }
-
-        .lyrics-item:hover {
-            transform: translateY(-12px);
-        }
-
-        .lyrics-item:hover img {
-            filter: brightness(1);
-        }
-
-        .lyrics-title {
-            margin-top: 12px;
-            font-size: 12px;
+        .news-detail h1 {
+            font-size: 22px;
             letter-spacing: 6px;
-            color: #444;
+            margin-bottom: 40px;
         }
 
-        @media(max-width: 768px) {
-            .lyrics-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 20px;
-                padding: 120px 4%;
-            }
-            .lyrics-title {
-                margin-top: 6px;
-                font-size: 10px;
-                letter-spacing: 4px;
+        .news-detail .date {
+            font-size: 11px;
+            color: #222;
+            margin-bottom: 8px;
+            letter-spacing: 4px;
+            /* Added letter spacing to match the overall design */
+        }
+
+        .news-detail p {
+            line-height: 2.2;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-top: 100px;
+            font-size: 11px;
+            letter-spacing: 4px;
+            color: #444;
+            text-decoration: none;
+            transition: color 0.4s ease;
+            position: relative;
+            padding-bottom: 5px;
+        }
+
+        .back-link:hover {
+            color: #111;
+        }
+
+        .back-link::after {
+            content: "";
+            position: absolute;
+            width: 0%;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.4);
+            left: 0;
+            bottom: 0px;
+            transition: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+        }
+
+        .back-link:hover::after {
+            width: 100%;
+        }
+
+        @media(max-width:768px) {
+            .news-detail {
+                padding: 160px 8%;
             }
         }
     
@@ -286,100 +298,39 @@
     </header>
 
 
-        <section class="lyrics-grid">
-        <a href="ghostnote.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="ghostnote.jpg" alt="ゴーストノート">
-                <div class="lyrics-title">ゴーストノート</div>
-            </div>
-        </a>
+                <section class="news-detail">
+        <div class="date">2026.08.21</div>
+        <h1>ニューアルバム『ゴーストノート』リリース</h1>
 
-        <a href="friend.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="friend.jpg" alt="フレンド">
-                <div class="lyrics-title">フレンド</div>
-            </div>
-        </a>
+        <img src="ghostnote.jpg" alt="ゴーストノート" style="width: 100%; max-width: 600px; margin-bottom: 40px; display: block;">
 
-        <a href="zakuro.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/zakuro.jpg" alt="柘榴">
-                <div class="lyrics-title">柘榴</div>
-            </div>
-        </a>
+        <p>
+            ベルホーロの3rdアルバム『ゴーストノート』を本日8月21日にリリースいたしました。<br>
+            先行シングル「柘榴」「フレンド」を含む全9曲が収録されています。<br><br>
 
-        <a href="shallows.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/shallow.jpg" alt="Shallow">
-                <div class="lyrics-title">Shallows</div>
+            本作は「諦念」がテーマとなっており、もう戻らない時間に思いを馳せながら、それでも振り返ってしまう心の動きを描いています。<br><br>
+
+            また、本作にはフルバンド編成の楽曲だけでなく、メンバー2人によるデュオ編成の楽曲も収録されています。親密な距離感で紡がれる静かな楽曲と、バンドならではの高揚感を伴うダイナミックな楽曲が、アルバム全体を通して「静」と「動」のコントラストを描き出しています。ぜひお楽しみください。<br><br>
+
+            <strong>配信リンク</strong><br>
+            <iframe src="https://linkco.re/embed/8XMMmA89" width="300" height="600" frameborder="0"></iframe><br><br>
+
+            <strong>Music Video</strong><br><br>
+            
+            柘榴
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 40px;">
+                <iframe src="https://www.youtube.com/embed/k3P55rDhWv4?si=CF9Z2FOFK31jz7RK" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-        </a>
-        <a href="terminal.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/terminal.jpg" alt="Terminal">
-                <div class="lyrics-title">ターミナル</div>
+
+            フレンド
+            <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; margin-bottom: 40px;">
+                <iframe src="https://www.youtube.com/embed/25C1TXzcPsA?si=3HlscugKY8xyn40l" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
-        </a>
-        <a href="sequence.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/sequence.jpg" alt="Sequence">
-                <div class="lyrics-title">シーケンス</div>
-            </div>
-        </a>
-        <a href="aiirodrive.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/aiirodrive.jpg" alt="藍色ドライブ">
-                <div class="lyrics-title">藍色ドライブ</div>
-            </div>
-        </a>
-        <a href="obscure.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/obscure.jpg" alt="オブスキュア">
-                <div class="lyrics-title">オブスキュア</div>
-            </div>
-        </a>
-        <a href="signofapril.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/signofapril.jpg" alt="4月の気配">
-                <div class="lyrics-title">4月の気配</div>
-            </div>
-        </a>
-        <a href="parasail.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/parasail.jpg" alt="パラセイル">
-                <div class="lyrics-title">パラセイル</div>
-            </div>
-        </a>
-        <a href="kizutsukitakunaifutari.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/kizutsukitakunaifutari.jpg" alt="傷つきたくないふたり">
-                <div class="lyrics-title">傷つきたくないふたり</div>
-            </div>
-        </a>
-        <a href="kiss.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/kiss.jpg" alt="キッス">
-                <div class="lyrics-title">キッス</div>
-            </div>
-        </a>
-        <a href="lighthouse.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/lighthouse.jpg" alt="Lighthouse">
-                <div class="lyrics-title">Lighthouse</div>
-            </div>
-        </a>
-        <a href="umikaze.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/umikaze.jpg" alt="海風にのって">
-                <div class="lyrics-title">海風にのって</div>
-            </div>
-        </a>
-        <a href="turquoise.html" style="text-decoration:none; color:inherit; display:block;">
-            <div class="lyrics-item">
-                <img src="jacket/turquoise.jpg" alt="ターコイズ">
-                <div class="lyrics-title">ターコイズ</div>
-            </div>
-        </a>
+        </p>
+
+        <div style="text-align: center; margin-top: 60px;">
+            <a href="news.html" style="color: #555; text-decoration: none; letter-spacing: 4px; font-size: 11px;">BACK TO NEWS</a>
+        </div>
     </section>
 
     <footer>
@@ -395,10 +346,7 @@
                 header.classList.remove("scrolled");
             }
         });
-    </script>
 
-
-    <script>
         document.addEventListener("DOMContentLoaded", function() {
             const hamburger = document.getElementById("hamburger");
             const navMenu = document.getElementById("nav-menu");
@@ -407,52 +355,9 @@
                 hamburger.addEventListener("click", function() {
                     hamburger.classList.toggle("active");
                     navMenu.classList.toggle("open");
-                    if (!hamburger.classList.contains("active") && subHeader) {
-                        subHeader.classList.remove("visible");
-                    }
-                });
-            }
-
-            const linkTrigger = document.getElementById("link-trigger");
-            const subHeader = document.getElementById("sub-header");
-            let hideTimeout;
-
-            if (linkTrigger && subHeader) {
-                linkTrigger.addEventListener("mouseenter", function(e) {
-                    if(window.innerWidth > 768) {
-                        clearTimeout(hideTimeout);
-                        subHeader.classList.add("visible");
-                    }
-                });
-                
-                subHeader.addEventListener("mouseenter", function(e) {
-                    if(window.innerWidth > 768) {
-                        clearTimeout(hideTimeout);
-                    }
-                });
-
-                linkTrigger.addEventListener("mouseleave", function(e) {
-                    if(window.innerWidth > 768) {
-                        hideTimeout = setTimeout(() => { subHeader.classList.remove("visible"); }, 200);
-                    }
-                });
-                
-                subHeader.addEventListener("mouseleave", function(e) {
-                    if(window.innerWidth > 768) {
-                        hideTimeout = setTimeout(() => { subHeader.classList.remove("visible"); }, 200);
-                    }
-                });
-
-                linkTrigger.addEventListener("click", function(e) {
-                    e.preventDefault();
-                    if(window.innerWidth <= 768) {
-                        subHeader.classList.toggle("visible");
-                    }
                 });
             }
         });
     </script>
 </body>
-
-
 </html>
