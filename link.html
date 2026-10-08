@@ -1,11 +1,9 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LIVE | ベルホーロ</title>
-
+    <title>LINK - Belhollo</title>
     <style>
         * {
             margin: 0;
@@ -238,93 +236,57 @@
         .hamburger.active span:nth-child(3) {
             transform: translateY(-8.5px) rotate(-45deg);
         }
-            .archive-link {
+        footer {
             text-align: center;
-            margin-top: 100px;
-            margin-bottom: 60px;
+            padding: 40px;
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #777;
+            border-top: 1px solid #eee;
         }
-        .archive-button {
+        
+        /* LINK PAGE SPECIFIC STYLES */
+        .link-container {
+            padding: 160px 20px 80px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .link-item {
+            margin-bottom: 80px;
+        }
+        
+        .link-title {
+            font-size: 24px;
+            letter-spacing: 2px;
+            margin-bottom: 20px;
+            position: relative;
             display: inline-block;
-            margin-top: 20px;
-            padding: 15px 40px;
-            border: 1px solid #111;
-            color: #111;
-            text-decoration: none;
-            letter-spacing: 2px;
-            font-size: 14px;
-            transition: 0.3s;
         }
-        .archive-button:hover {
-            background: #111;
-            color: #fff;
+        .link-title::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 100%;
+            height: 1px;
+            background-color: #333;
         }
-            .page-title{
-            text-align:center;
-            letter-spacing:.3em;
-            margin-top:120px;
-            margin-bottom:100px;
-            font-weight: normal;
-        }
-
-        .archive-container{
-            max-width:700px;
-            margin:0 auto;
-            padding:0 20px;
-            margin-bottom: 120px;
-        }
-
-        .year-heading{
-            font-size:1.5rem;
-            letter-spacing:.15em;
-            margin-top:80px;
-            margin-bottom:30px;
-            border-bottom:1px solid rgba(0, 0, 0, 0.2);
-            padding-bottom:10px;
-            font-weight: normal;
-        }
-
-        .archive-item{
-            margin-bottom:50px;
-        }
-
-        .archive-date {
-            font-size: 12px;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
+        
+        .link-desc {
+            line-height: 2;
             color: #555;
+            margin-bottom: 40px;
         }
-
-        .archive-item h3 {
-            font-size: 18px;
-            letter-spacing: 2px;
-            margin-bottom: 8px;
-            font-weight: normal;
-        }
-
-.archive-venue {
-            font-size: 14px;
-            color: #333;
-        }
-
-        .mv-icon {
-            font-size: 12px;
-            text-decoration: none;
-            color: #555;
-            transition: 0.3s;
-            margin-left: 8px;
-        }
-
-        .mv-icon:hover {
-            color: #111;
+        
+        .embed-container {
+            width: 100%;
+            max-width: 600px;
         }
     </style>
-
-
     <link rel="icon" href="favicon.png" type="image/png">
 </head>
-
 <body>
-
     <header id="header">
         <div><a href="index.html" style="display: flex; align-items: center; text-decoration: none;"><img src="logo.png" alt="Belhollo" style="height: 28px; width: auto;"></a></div>
         <div class="hamburger" id="hamburger">
@@ -340,133 +302,101 @@
         </nav>
     </header>
 
-    <div class="archive-container">
-        <h2 class="year-heading">2026</h2>
-        <article class="archive-item">
-            <img src="live-ghostnote.png" alt="ゴーストノート" style="width: 100%; max-width: 600px; margin-bottom: 20px; display: block;">
-            <p class="archive-date">2026.09.27 @柴崎mod</p>
-            <h3>新作発売単独公演「ゴーストノート」</h3>
-            <div class="archive-setlist" style="margin-top: 30px; font-size: 13px; line-height: 2; color: #555; letter-spacing: 2px;">
-                <p style="margin-bottom: 15px; font-weight: bold; color: #333;">SET LIST</p>
-                1.フレンド<br>
-                2.藍色ドライブ<br>
-                3.ビオトープ<br>
-                4.Echoes<br>
-                5.帆船<br>
-                6.碇<br>
-                7.ターミナル<br>
-                8.Like That<br>
-                9.柘榴<br>
-                (encore)<br>
-                10.オーバードライブ
+    <div class="link-container">
+        
+        <div class="link-item">
+            <h2 class="link-title">Instagram</h2>
+            <p class="link-desc">
+                ベルホーロが現在メインとして扱っているSNSです。ストーリーズでは、制作の裏側などが覗き見できるかも。
+            </p>
+            <div class="embed-container">
+                <blockquote class="instagram-media"
+                  data-instgrm-permalink="https://www.instagram.com/belhollo/"
+                  style="width: 100%">
+                </blockquote>
+                <script async src="https://www.instagram.com/embed.js"></script>
             </div>
-        </article>
+        </div>
+        
 
-        
-        <article class="archive-item">
-            <img src="live-flyer.jpg" alt="進捗" style="width: 100%; max-width: 600px; margin-bottom: 20px; display: block;">
-            <p class="archive-date">2026.06.20 @八丁堀七針</p>
-            <h3>「進捗」</h3>
-            <div class="archive-setlist" style="margin-top: 30px; font-size: 13px; line-height: 2; color: #555; letter-spacing: 2px;">
-                <p style="margin-bottom: 15px; font-weight: bold; color: #333;">SET LIST</p>
-                1. ターコイズ<br>
-                2. ムース<br>
-                3. オブスキュア<br>
-                4. フレンド<br>
-                5. ビオトープ<br>
-                6. オーバードライブ<br>
-                7. ターミナル<br>
-                8. 碇<br>
-                9. 柘榴
+        <div class="link-item">
+            <h2 class="link-title">YouTube</h2>
+            <p class="link-desc">
+                ベルホーロの映像作品を視聴することができます。MVはもちろん、ライブ映像やデュオセッションが見られるのはYouTubeだけ。
+            </p>
+            <div class="embed-container" style="margin-bottom: 40px;">
+                <p style="margin-bottom: 10px; font-weight: bold;">柘榴</p>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                    <iframe src="https://www.youtube.com/embed/k3P55rDhWv4?si=uHKg92s89UhX9IMu" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
             </div>
-        </article>
+            <div class="embed-container">
+                <p style="margin-bottom: 10px; font-weight: bold;">フレンド</p>
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden;">
+                    <iframe src="https://www.youtube.com/embed/25C1TXzcPsA?si=iOx_C12xbcRkm3t3" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                </div>
+            </div>
+        </div>
 
+        <div class="link-item">
+            <h2 class="link-title">Streaming</h2>
+            <p class="link-desc">
+                ベルホーロの音源を聴くことができます。このサイトではSpotifyとApple Musicだけ掲載していますが、Amazon MusicやLINE Music、YouTube Musicなどでも配信しています。
+            </p>
+            <div class="embed-container" style="margin-bottom: 40px;">
+                <p style="margin-bottom: 10px; font-weight: bold;">Spotify</p>
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/artist/3JfZV3QtSw7UWv53DjKct8?utm_source=generator&si=60d4e2d5eef04415" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+            </div>
+            <div class="embed-container">
+                <p style="margin-bottom: 10px; font-weight: bold;">Apple Music</p>
+                <iframe allow="autoplay *; encrypted-media *;" frameborder="0" height="450" style="width:100%;max-width:660px;overflow:hidden;background:transparent;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/jp/album/ghost-note/6795899681"></iframe>
+            </div>
+        </div>
 
-        <h2 class="year-heading">2025</h2>
-        
-        <article class="archive-item">
-            <img src="betweenfriendsflyer.jpg" alt="Between Friends?" style="width: 100%; max-width: 600px; margin-bottom: 20px; display: block;">
-            <p class="archive-date">2025.03.22 @三軒茶屋Grapefruits Moon</p>
-            <h3>「Between Friends?」</h3>
-            <div class="archive-setlist" style="margin-top: 30px; font-size: 13px; line-height: 2; color: #555; letter-spacing: 2px;">
-                <p style="margin-bottom: 15px; font-weight: bold; color: #333;">SET LIST</p>
-                1. ターミナル<br>
-                2. オブスキュア<br>
-                3. Spin<br>
-                4. シュノーケル<br>
-                5. カーテン <a href="https://youtu.be/zTG5x7tBUkk?si=UKbYqdU3uVR14KdM" class="mv-icon" target="_blank">▶</a><br>
-                6. 碇 <a href="https://youtu.be/S58HhjGQOrw?si=zhmYAnlqTAn0hqtK" class="mv-icon" target="_blank">▶</a><br>
-                7. 柘榴<br>
-                8. 帆船<br>
-                9. オーバードライブ
+        <div class="link-item">
+            <h2 class="link-title">Podcast</h2>
+            <p class="link-desc">
+                ベルホーロの雑談デモテープというポッドキャストをSpotifyで配信しています。楽曲はしっとりしたものが多いですが、会話はがっちゃりしたものが多めです。
+            </p>
+            <div class="embed-container">
+                <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/show/033VGaDLewqGXcca9Udg8S?utm_source=generator&si=5ff2bcc9160d48cc" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
             </div>
-        </article>
-        
-        <!-- Future 2025 events will go here -->
+        </div>
 
-        <h2 class="year-heading">2024</h2>
-        
-        <article class="archive-item">
-            <img src="shallowsflyer.jpg" alt="2nd Album 『Shallows』Release Show" style="width: 100%; max-width: 600px; margin-bottom: 20px; display: block;">
-            <p class="archive-date">2024.11.24 @下北沢モナレコード</p>
-            <h3>「2nd Album 『Shallows』Release Show」</h3>
-            <div class="archive-setlist" style="margin-top: 30px; font-size: 13px; line-height: 2; color: #555; letter-spacing: 2px;">
-                <p style="margin-bottom: 15px; font-weight: bold; color: #333;">SET LIST</p>
-                1. ライトハウス<br>
-                2. オブスキュア<br>
-                3. ストリート<br>
-                4. ゴーストタウン・ドライブ<br>
-                5. 4月の気配<br>
-                6. ターミナル<br>
-                7. 碇<br>
-                8. ヘブンズ<br>
-                (encore)<br>
-                9. 傷つきたくないふたり<br>
-                10. うだつ
+        <div class="link-item">
+            <h2 class="link-title">Bandcamp</h2>
+            <p class="link-desc">
+                ベルホーロの音源を販売しています。ライブ音源やデモ音源、セッション音源などここでしか買えない音源を買うことができます。
+            </p>
+            <div class="embed-container">
+                <iframe style="border: 0; width: 350px; height: 470px; max-width: 100%;" src="https://bandcamp.com/EmbeddedPlayer/album=4101077046/size=large/bgcol=333333/linkcol=ffffff/tracklist=false/transparent=true/" seamless><a href="https://belhollo.bandcamp.com/album/-">ゴーストノート by belhollo</a></iframe>
             </div>
-        </article>
+        </div>
 
-        <h2 class="year-heading">2023</h2>
-        
-        <article class="archive-item">
-            <img src="yonetsuflyer.jpg" alt="夏の予熱" style="width: 100%; max-width: 600px; margin-bottom: 20px; display: block;">
-            <p class="archive-date">2023.09.02 @下北沢LIVE HAUS</p>
-            <h3>「夏の予熱」</h3>
-            <div class="archive-setlist" style="margin-top: 30px; font-size: 13px; line-height: 2; color: #555; letter-spacing: 2px;">
-                <p style="margin-bottom: 15px; font-weight: bold; color: #333;">SET LIST</p>
-                1. ビオトープ<br>
-                2. 藍色ドライブ<br>
-                3. ソワレ<br>
-                4. ムース<br>
-                5. オブスキュア<br>
-                6. うだつ
+        <div class="link-item">
+            <h2 class="link-title">BASE</h2>
+            <p class="link-desc">
+                ベルホーロのオリジナルグッズを販売しています。CD、ステッカーに加え、予稿集という変わったものまで販売しています。
+            </p>
+            <div class="embed-container">
+                <iframe frameborder="0" height="380" src="https://belhollo.official.ec/items/78093066/widget" width="220" style="max-width: 100%;"></iframe>
             </div>
-        </article>
-        
-        <h2 class="year-heading">2022</h2>
-        
-        <article class="archive-item">
-            <img src="greeneryflyer.jpg" alt="Greenery" style="width: 100%; max-width: 600px; margin-bottom: 20px; display: block;">
-            <p class="archive-date">2022.11.05 @吉祥寺NEPO</p>
-            <h3>「Greenery」</h3>
-            <div class="archive-setlist" style="margin-top: 30px; font-size: 13px; line-height: 2; color: #555; letter-spacing: 2px;">
-                <p style="margin-bottom: 15px; font-weight: bold; color: #333;">SET LIST</p>
-                1. 風縫い<br>
-                2. キッス<br>
-                3. ビオトープ<br>
-                4. 海風にのって<br>
-                5. ターコイズ<br>
-                6. パラセイル<br>
-                7. ムース<br>
-                8. 傷つきたくないふたり<br>
-                9. うだつ <a href="https://youtu.be/8YkPnbPAjMc?si=lG_os48mzsk_MWaR" class="mv-icon" target="_blank">▶</a>
+        </div>
+
+        <div class="link-item">
+            <h2 class="link-title">X</h2>
+            <p class="link-desc">
+                ベルホーロの第2のSNSです。情報がとても端的にまとめられていると思います。
+            </p>
+            <div class="embed-container">
+                <blockquote class="twitter-tweet"><p lang="ja" dir="ltr">本日8月21日に3rdアルバム『ゴーストノート』の配信を開始いたしました。<br>ぜひ、お聴きください。<br>https://t.co/gnAEFCDmbG<br><br>1. Like That<br>2. Echoes<br>3. フレンド<br>4. 乞い人<br>5. 懐<br>6. 流し目<br>7. 柘榴<br>8. 帆船<br>9. オーバードライブ https://t.co/GKMjeNMDfd</p>&mdash; ベルホーロ (@belhollo) <a href="https://x.com/belhollo/status/2090453810456195548?ref_src=twsrc%5Etfw">August 20, 2026</a></blockquote>
+                <script async src="https://platform.x.com/widgets.js" charset="utf-8"></script>
             </div>
-        </article>
-        
+        </div>
+
     </div>
 
     <footer>
-
         &copy; 2026 Belhollo
     </footer>
 
@@ -479,10 +409,7 @@
                 header.classList.remove("scrolled");
             }
         });
-    </script>
 
-
-    <script>
         document.addEventListener("DOMContentLoaded", function() {
             const hamburger = document.getElementById("hamburger");
             const navMenu = document.getElementById("nav-menu");
@@ -491,13 +418,9 @@
                 hamburger.addEventListener("click", function() {
                     hamburger.classList.toggle("active");
                     navMenu.classList.toggle("open");
-
                 });
-            }
             }
         });
     </script>
 </body>
-
-
 </html>
